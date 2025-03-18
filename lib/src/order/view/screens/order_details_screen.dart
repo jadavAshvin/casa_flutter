@@ -83,7 +83,7 @@ class OrderDetails extends StatelessWidget {
                   overlayColor: WidgetStateProperty.all(Colors.transparent),
                   splashFactory: NoSplash.splashFactory,
                   onTap: () {
-                    //context.pushNamed(RouteNames.trackShipment);
+                    context.pushNamed(RouteNames.trackShipment,extra: orderItem);
                   },
                   child: Container(
                     padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
@@ -148,7 +148,7 @@ class OrderDetails extends StatelessWidget {
                 const Divider(height: 20),
                 SmallButton(
                   onPressed: () {
-                    context.pushNamed(RouteNames.orderDetails);
+                    //context.pushNamed(RouteNames.orderDetails);
                   },
                   text: 'Download invoice',
                 ),

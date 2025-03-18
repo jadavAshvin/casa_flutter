@@ -1,9 +1,12 @@
+import 'dart:io';
+
 import 'package:casa_flutter/utils/extensions.dart';
 import 'package:casa_flutter/utils/preference_manager.dart';
 import 'package:casa_flutter/utils/validators.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import '../model/auth_models.dart';
 import '../model/service/auth_service.dart';
 
@@ -19,6 +22,8 @@ class AuthController extends GetxController {
   RxBool checkboxValue = false.obs;
   RxBool isLoggedIn = false.obs;
   RxBool isLoading = false.obs;
+  RxBool isGoogleSignInLoading = false.obs;
+  RxBool isAppleLoginLoading = false.obs;
   RxBool isPasswordObscured = true.obs;
   RxString message = ''.obs;
 
@@ -31,6 +36,7 @@ class AuthController extends GetxController {
     password.clear();
     isLoggedIn(false);
     isLoading(false);
+    isGoogleSignInLoading(false);
     message('');
     isPasswordObscured(true);
     checkboxValue(false);
@@ -82,6 +88,10 @@ class AuthController extends GetxController {
     }
   }
 
+
+
+
+
   void showPassword() {
     if (isPasswordObscured()) {
       isPasswordObscured(false);
@@ -109,4 +119,5 @@ class AuthController extends GetxController {
       '',
     );
   }
+
 }

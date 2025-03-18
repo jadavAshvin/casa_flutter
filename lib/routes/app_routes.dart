@@ -241,6 +241,7 @@ final GoRouter router = GoRouter(
       name: RouteNames.trackShipment,
       builder: (context, state) {
         final orderItem = state.extra as OrderedItems?;
+        print('items==>${orderItem!.itemName!}');
         return TrackShipment(orderItem: orderItem!);
       },
     ),
