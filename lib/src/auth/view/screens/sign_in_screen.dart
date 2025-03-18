@@ -105,14 +105,15 @@ class SignInScreen extends StatelessWidget {
                   AuthButton(
                     type: AuthButtonType.google,
                     onPressed: () {
-                      authController.signInWithGoogle();
-                      //context.pushNamed(RouteNames.navigation);
+                      context.pushNamed(RouteNames.navigation);
+
                     },
                   ),
                   AuthButton(
                     type: AuthButtonType.apple,
                     onPressed: () {
-                      authController.signInWithApple();
+                      context.pushNamed(RouteNames.navigation);
+
                     },
                   ),
                   Spacer(),
